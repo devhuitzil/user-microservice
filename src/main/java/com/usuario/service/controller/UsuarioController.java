@@ -69,6 +69,7 @@ public class UsuarioController {
 		List<Moto> motos = usuarioService.getMotos(id);
 		return ResponseEntity.ok(motos);
 	}
+	
 	@PostMapping("/carro/{usuarioId}")
 	public ResponseEntity<Carro> guardarCarro(@PathVariable("usuarioId") int usuarioId, @RequestBody Carro carro){
 		Carro nuevoCarro = usuarioService.saveCarro(usuarioId, carro);
@@ -87,7 +88,5 @@ public class UsuarioController {
 		return ResponseEntity.ok(resultado);
 	}
 	
-
-
 }
 
